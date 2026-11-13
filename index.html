@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoodMap – Lebensmittel retten in Österreich | Kostenlos & regional</title>
-<meta name="description" content="FoodMap verbindet Kund:innen mit Höfen, Betrieben und Direktvermarktern, die überschüssige Lebensmittel abgeben. Finde Rettungen in deiner Nähe – kostenlos für iPhone und Android.">
+<meta name="description" content="FoodMap verbindet Kund:innen mit Höfen, Betrieben und Direktvermarktern, die überschüssige Lebensmittel abgeben. Jeder kann Lebensmittel spenden oder am Markt verkaufen – kostenlos für iPhone und Android.">
 <meta property="og:title" content="FoodMap – Umwelt retten. Gemeinsam.">
 <meta property="og:description" content="Lebensmittel retten statt wegwerfen. Finde Angebote in deiner Nähe.">
 <meta property="og:type" content="website">
@@ -162,7 +162,7 @@
   /* ===== ROLES (real app roles) ===== */
   .role-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 18px;
   }
   .role-card {
@@ -171,6 +171,16 @@
     border-radius: 18px;
     padding: 30px 26px;
   }
+  .offer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 28px; }
+  .offer-card { background: var(--forest); color: #fff; border-radius: 20px; padding: 30px 28px; }
+  .offer-card.markt { background: var(--forest-deep); }
+  .offer-card .role-emoji { margin-bottom: 10px; }
+  .offer-card h3 { font-size: 22px; margin-bottom: 8px; color: #fff; }
+  .offer-card p { font-size: 15px; color: rgba(255,255,255,0.88); }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  .feature { display: flex; gap: 12px; align-items: flex-start; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .feature .fi { font-size: 22px; line-height: 1; }
+  .feature p { font-size: 14.5px; color: var(--ink); margin: 0; }
   .role-emoji { font-size: 34px; margin-bottom: 14px; display: block; }
   .role-card h3 { font-size: 19px; margin-bottom: 8px; color: var(--forest-deep); }
   .role-card p { font-size: 14.5px; color: var(--muted); }
@@ -218,6 +228,7 @@
 
   @media (max-width: 760px) {
     .role-grid { grid-template-columns: 1fr; }
+    .offer-grid { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr; }
     .mission { grid-template-columns: 1fr; padding: 34px 26px; border-radius: 18px; }
     footer { flex-direction: column; align-items: flex-start; }
@@ -237,7 +248,7 @@
   <div class="wrap">
     <div class="eyebrow">Umwelt retten. Gemeinsam.</div>
     <h1>Gute Lebensmittel<br>landen nicht mehr<br><em>in der Tonne.</em></h1>
-    <p class="hero-sub">FoodMap zeigt dir, welche Höfe, Betriebe und Direktvermarkter in deiner Nähe überschüssige Lebensmittel abgeben — reservieren statt wegwerfen.</p>
+    <p class="hero-sub">FoodMap zeigt dir, wo Nachbarn, Höfe und Betriebe in deiner Nähe überschüssige Lebensmittel abgeben — verschenken, verkaufen, retten statt wegwerfen.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.johannesfuchssteiner.foodmap" target="_blank" rel="noopener">
         Kostenlos bei Google Play
@@ -274,8 +285,20 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Für jeden ein Platz</div>
-      <h2>Drei Rollen, ein Ziel.</h2>
-      <p>Egal ob du rettest, abgibst oder verkaufst — FoodMap passt sich an, wer du bist.</p>
+      <h2>Spenden oder verkaufen — jeder kann mitmachen.</h2>
+      <p>Egal ob du rettest, verschenkst oder verkaufst — FoodMap passt sich an, wer du bist.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <span class="role-emoji">💚</span>
+        <h3>Jeder kann spenden</h3>
+        <p>Ob Privatperson, Hof oder Betrieb: Übrige Lebensmittel mit Foto und Abholzeit einstellen und gratis verschenken. Deine Nachbarn sehen das Angebot sofort auf der Karte.</p>
+      </div>
+      <div class="offer-card markt">
+        <span class="role-emoji">🛒</span>
+        <h3>Der Markt zum Verkaufen</h3>
+        <p>Privatpersonen, Versorger und Unternehmer verkaufen Überschuss-Ware günstig weiter — bezahlt wird bar bei Abholung oder sicher online.</p>
+      </div>
     </div>
     <div class="role-grid">
       <div class="role-card">
@@ -284,14 +307,19 @@
         <p>Angebote in deiner Nähe entdecken, reservieren und günstig oder kostenlos abholen.</p>
       </div>
       <div class="role-card">
+        <span class="role-emoji">🏡</span>
+        <h3>Privatperson</h3>
+        <p>Obst aus dem Garten, Brot vom Vortag oder Reste von der Feier gratis verschenken oder günstig verkaufen.</p>
+      </div>
+      <div class="role-card">
         <span class="role-emoji">🌾</span>
         <h3>Versorger</h3>
-        <p>Als Hof oder Direktvermarkter überschüssige Ernte und Produkte unkompliziert anbieten.</p>
+        <p>Als Hof oder Direktvermarkter überschüssige Ernte und Produkte verschenken oder am Markt verkaufen.</p>
       </div>
       <div class="role-card">
         <span class="role-emoji">🏪</span>
         <h3>Unternehmen</h3>
-        <p>Als Betrieb Retouren und Restposten weitergeben, statt sie zu entsorgen.</p>
+        <p>Bäckerei, Gastro oder Handel: Restposten und Überschüsse verkaufen oder spenden, statt sie zu entsorgen.</p>
       </div>
     </div>
   </div>
@@ -319,6 +347,29 @@
         <h3>Abholen & genießen</h3>
         <p>Zum vereinbarten Zeitpunkt abholen. Gut fürs Klima, gut fürs Börserl.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Alle Funktionen</div>
+      <h2>Das kann FoodMap.</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature"><span class="fi">📍</span><p>Karte mit allen Angeboten in deiner Nähe</p></div>
+      <div class="feature"><span class="fi">📸</span><p>Angebote mit Fotos, Menge, Preis und Abholzeit</p></div>
+      <div class="feature"><span class="fi">🔖</span><p>Mit einem Fingertipp reservieren</p></div>
+      <div class="feature"><span class="fi">💬</span><p>Direkt mit dem Anbieter chatten</p></div>
+      <div class="feature"><span class="fi">🔔</span><p>Benachrichtigung bei jeder Reservierung</p></div>
+      <div class="feature"><span class="fi">💳</span><p>Bezahlen bar oder sicher online</p></div>
+      <div class="feature"><span class="fi">🗺️</span><p>Routen-Vorschau zum Abholort</p></div>
+      <div class="feature"><span class="fi">⭐</span><p>Favoriten speichern</p></div>
+      <div class="feature"><span class="fi">🧾</span><p>Übersicht aller Reservierungen und Käufe – mit Bestätigung zum Teilen</p></div>
+      <div class="feature"><span class="fi">🛡️</span><p>Melden &amp; Blockieren für eine sichere Community</p></div>
+      <div class="feature"><span class="fi">🌐</span><p>Deutsch, Englisch, Rumänisch und Ukrainisch</p></div>
+      <div class="feature"><span class="fi">✅</span><p>Kostenlos – für Abholer und Anbieter</p></div>
     </div>
   </div>
 </section>
